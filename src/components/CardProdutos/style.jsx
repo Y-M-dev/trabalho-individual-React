@@ -1,8 +1,23 @@
 import styled from "styled-components";
+import {Link} from "react-router";
+import {Button} from "../Botao/index.jsx";
+import {StyledButton} from "../Botao/style.jsx";
 
-export const StyleDescriptionHome = styled.p`
-    margin: 5px 0;
+export const StyleLink = styled(Link)`
+    text-decoration: none;
+    width: 20%;
+    color: inherit;
+        margin: 20px 20px;
+`;
+export const StyleButton = styled(Button)`
+        opacity: 0;
+`
+export const StyleDescriptionContainer = styled.div`
     position: absolute;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-evenly;
     background-color: #272727ef;
     opacity: 0;
     width: 100%;
@@ -11,19 +26,23 @@ export const StyleDescriptionHome = styled.p`
     transform: translateY(100%);
     transition: all 0.4s ease-in-out;
 `
+export const StyleDescriptionText = styled.p`
+    margin: 15px 0 ;
+`
 export const StyleCard = styled.div`
-    width: 20%;
+
     position: relative;
     background-color: #000;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     border-radius: 15px;
     padding: 20px;
     box-sizing: border-box;
-    margin: 20px 20px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+        text-align: center;
+    transition: all 0.4s ease-in-out;
     overflow: hidden;
 
     &:hover {
@@ -32,14 +51,13 @@ export const StyleCard = styled.div`
         cursor: pointer;
         z-index: 10;
 
-        ${StyleDescriptionHome} {
+        ${StyleDescriptionContainer} {
             opacity: 1;
             transform: translateY(0);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
         }
+            ${StyledButton} {
+                    opacity: 1;
+            }
     }
 `
 
